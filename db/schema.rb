@@ -23,10 +23,12 @@ ActiveRecord::Schema.define(version: 2021_02_23_065131) do
   end
 
   create_table "opinions", force: :cascade do |t|
-    t.integer "author_id"
     t.text "text"
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id", "created_at"], name: "index_opinions_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_opinions_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
