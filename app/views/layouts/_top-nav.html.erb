@@ -1,0 +1,19 @@
+<nav class="nav col-md-12">
+  <%= link_to 'Stay in touch', 'https://github.com/alvarorf/' %>
+  <div class="menu">
+    <div class="menu-item">
+      <%= link_to 'Movie Review', root_path, id: "logo", class: 'navbar-brand' %>
+    </div>
+    <div class="menu-item">
+      <%= link_to "Home", root_path, class: 'nav-link' %>
+    </div>
+    <div class="menu-item">
+      <%= link_to "Log in", '#', class: 'nav-link' %>
+    </div>
+  </div>
+  <% if current_user %>
+    <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'navbar-brand' %>
+  <% else %>
+    <%= link_to 'Sign in', user_session_path, class: 'navbar-brand' %>
+  <% end %>
+</nav>

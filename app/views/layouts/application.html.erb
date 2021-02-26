@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html>
+
   <%= render 'layouts/header' %>
+
+  <body class='row'>
   <%= render 'layouts/left-menu' %>
-  <%= render 'layouts/right-menu' %>
-  <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+  <div class="col-md-10 row">
+    <%= render 'layouts/top-nav' %>
+    <%= render 'layouts/middle' %>
+    <%= render 'layouts/right-menu' %>
+  </div>
+
+
     <%= yield %>
   </body>
 </html>
