@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  # before_action :authenticate_user!
+  before_action :authenticate_user!, only: []
   def index
     @users = User.all
   end
@@ -24,7 +24,10 @@ class UsersController < ApplicationController
     @user.destroy
   end
 
-  def homepage; end
+  def homepage
+  end
+
+
 
   private
   def user_params
