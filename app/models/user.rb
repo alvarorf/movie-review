@@ -5,5 +5,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validates :username, presence: true, length: { maximum: 50 }, uniqueness: true
   validates :fullname, presence: true, length: { maximum: 100 }
-  has_many :opinions
+  validates :photo, presence: true
+  validates :coverimage, presence: true
+  has_many :opinions, foreign_key: 'author_id'
+  has_many :followers, foreign_key: :followed_id, class_name: 'Following'
+  has_many :user_followers, through: :followers, source: :follower
+
+  has_many :followeds, foreign_key: :follower_id, class_name: 'Following'
+  has_many :user_followeds, through: :followeds, source: :followed
 end
