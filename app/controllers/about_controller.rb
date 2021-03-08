@@ -1,5 +1,4 @@
 class AboutController < ActionController::Base
   layout 'about'
-  def about
-  end
+  def about; end
 end

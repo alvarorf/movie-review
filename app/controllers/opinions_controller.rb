@@ -1,12 +1,10 @@
 class OpinionsController <
   before_action :authenticate_user!
-
   def index
     @opinions = current_user.opinions.all
   end
 
-  def new
-  end
+  def new; end
 
   def show
     @opinion = Opinion.find(params[:id])
@@ -21,11 +19,9 @@ class OpinionsController <
     end
   end
 
-  def update
-  end
+  def update; end
 
-  def destroy
-  end
+  def destroy; end
 
   private
 

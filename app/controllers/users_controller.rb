@@ -22,12 +22,13 @@ class UsersController < ApplicationController
   end
 
   def show
-      @user = User.find(params[:id])
-      @opinions = @user.opinions.all
+    @user = User.find(params[:id])
+    @opinions = @user.opinions.all
   end
+
   def update
     if @user.update(user_params)
-      flash[:success] = "Profile updated"
+      flash[:success] = 'Profile updated'
       redirect_to @user
     else
       render 'edit'
@@ -38,14 +39,11 @@ class UsersController < ApplicationController
     @user.destroy
   end
 
-  def homepage
-  end
-
-
+  def homepage; end
 
   private
-  def user_params
-    params.require(:user).permit(:username,:fullname, :email, :password, :password_confirmation)
-  end
 
+  def user_params
+    params.require(:user).permit(:username, :fullname, :email, :password, :password_confirmation)
+  end
 end

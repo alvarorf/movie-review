@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Opinion, type: :model do
-  it "Should fail if we try to create an empty opinion" do
+  it 'Should fail if we try to create an empty opinion' do
     expect(Opinion.new).to_not be_valid
   end
   it 'Should be valid' do

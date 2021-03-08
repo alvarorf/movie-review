@@ -20,7 +20,6 @@ class User < ApplicationRecord
     @user.count_followed += 1
     self.count_follower += 1
     @user.save
-    self.save
+    save
   end
-
 end
