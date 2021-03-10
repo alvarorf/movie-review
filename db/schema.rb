@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(version: 2021_02_23_065131) do
     t.string "fullname"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "count_follower", default: 0
+    t.integer "count_followed", default: 0
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

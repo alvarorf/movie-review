@@ -1,28 +1,31 @@
+<div class="sidebar">
 <div class="sidebar d-flex column">
   <div class="profile-user">
-    <div class="image"></div>
+    <img>
+    <h3>NAME</h3>
+    <img class="image" src="">
     <h3><%= @user.username %></h3>
-<div class="rightbar-home">
-  <h4>WHO TO FOLLOW</h4>
-  <div>
-    <img src="">
-    <span>User name</span>
   </div>
   <div class="profile-follows">
+    <div class="following">
+      <h4>Following</h4>
     <div class="follows">
       <h4>200</h4>
       <p>Following</p>
     </div>
+    <div class="following">
+      <h4>Followers</h4>
     <div class="divisor"></div>
     <div class="follows">
       <h4>200</h4>
       <p>Followers</p>
     </div>
-  <div>
-    <img src="">
-    <span>User name</span>
   </div>
   <div class="profile-links">
+    <a>HOME</a>
+    <a>CONNECT</a>
+    <a>DISCOVER</a>
+    <a>PROFILE</a>
     <div>
       <span class="material-icons">home</span>
       <a>HOME</a>
@@ -34,22 +37,19 @@
     <div>
       <span class="material-icons">rss_feed</span>
       <a>DISCOVER</a>
-  <div>
-    <img src="">
-    <span>User name</span>
-  </div>
-</div>
-<div class="middle-section container">
-  <div class="tweet-section">
-    <span>TWEET SOMETHING:</span>
-    <div class="tweet-typing">
     </div>
-  </div>
-  <div class="new-tweets">
-    <span>NEW TWEETS</span>
     <div>
       <span class="material-icons">person</span>
       <a>PROFILE</a>
     </div>
+  </div>
+</div>
+<div class="top-bar">
+  <%= image_tag "opinion-icon.png" %>
+  <div>
+    <span class="material-icons">create</span>
+    <span class="material-icons">local_post_office</span>
+    <span class="material-icons">search</span>
+    <span class="material-icons">settings</span>
   </div>
 </div>

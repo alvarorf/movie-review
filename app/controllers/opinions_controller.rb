@@ -1,7 +1,8 @@
-class OpinionsController <
+class OpinionsController < ApplicationController
   before_action :authenticate_user!
   def index
     @opinions = current_user.opinions.all
+    @opinion = Opininion.new
   end
 
   def new; end
