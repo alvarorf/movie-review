@@ -15,14 +15,19 @@ class UsersController < ApplicationController
 
   def create
     #s3_service = Aws::S3::Resource.new
+    s3_service = Aws::S3::Resource.new(
+      region: 'us-east-1',
+      access_key_id: ENV['ACCESS_KEY'],
+      secret_access_key: ENV['SECRET_ACCESS_KEY']
+    )
     @user = User.new(user_params)
-    # attach_files(s3_service) if params[:user][:photo] && params[:user][:coverimage]
+    attach_files(s3_service) if params[:user][:photo] && params[:user][:coverimage]
     @user.username = user_params[:username]
     @user.fullname = user_params[:fullname]
 
     if @user.save
       flash[:success] = 'Profile updated!'
-      reditect_to root_path
+      redirect_to root_path
     else
       flash.now[:message_edit] = @user.errors.full_messages
       render 'edit'
@@ -40,10 +45,14 @@ class UsersController < ApplicationController
   end
 
   def update
+    @user = User.find(current_user.id)
+    @user.username = user_params[:username]
+    @user.fullname = user_params[:fullname]
     if @user.update(user_params)
       flash[:success] = 'Profile updated'
-      redirect_to @user
+      redirect_to edit_user_path(current_user.id)
     else
+      flash.now[:message_edit] = @user.errors.full_messages
       render 'edit'
     end
   end

@@ -1,12 +1,11 @@
 class SessionsController < ApplicationController
   before_action :require_logout, only: %i[new create]
-
   def new
     @user = User.new
   end
 
   def create
-    @user = User.find_by(session_param)
+    @user = User.find_by(session_params)
     if @user
       login(@user.id)
       redirect_to home_path
@@ -28,6 +27,6 @@ class SessionsController < ApplicationController
   private
 
   def session_params
-    params.require(:session).permit(:username)
+    params.require('session').permit(:username)
   end
 end

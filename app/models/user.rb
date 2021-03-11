@@ -1,8 +1,4 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  #devise :database_authenticatable, :registerable,
-  #       :recoverable, :rememberable, :validatable
   validates :username, presence: true, length: { maximum: 50 }, uniqueness: true
   validates :fullname, presence: true, length: { maximum: 100 }
   #validates :photo , presence: true
@@ -21,7 +17,7 @@ class User < ApplicationRecord
     @user.count_followed += 1
     self.count_follower += 1
     @user.save
-    save
+    self.save
   end
 
   def not_followed

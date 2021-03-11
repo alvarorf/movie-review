@@ -1,55 +1,39 @@
-<div class="sidebar">
 <div class="sidebar d-flex column">
   <div class="profile-user">
-    <img>
-    <h3>NAME</h3>
-    <img class="image" src="">
-    <h3><%= @user.username %></h3>
+    <img class="image" src="<%= current_user.photo %>">
+    <h3><%= current_user.username %></h3>
   </div>
   <div class="profile-follows">
-    <div class="following">
-      <h4>Following</h4>
     <div class="follows">
-      <h4>200</h4>
+      <h4><%= current_user.count_follower %></h4>
       <p>Following</p>
     </div>
-    <div class="following">
-      <h4>Followers</h4>
     <div class="divisor"></div>
     <div class="follows">
-      <h4>200</h4>
+      <h4><%= current_user.count_followed %></h4>
       <p>Followers</p>
     </div>
   </div>
   <div class="profile-links">
-    <a>HOME</a>
-    <a>CONNECT</a>
-    <a>DISCOVER</a>
-    <a>PROFILE</a>
     <div>
       <span class="material-icons">home</span>
-      <a>HOME</a>
-    </div>
-    <div>
-      <span class="material-icons">alternate_email</span>
-      <a>CONNECT</a>
-    </div>
-    <div>
-      <span class="material-icons">rss_feed</span>
-      <a>DISCOVER</a>
+      <%= link_to "HOME", home_path %>
     </div>
     <div>
       <span class="material-icons">person</span>
-      <a>PROFILE</a>
+      <%= link_to "PROFILE", user_path(current_user.id) %>
     </div>
   </div>
 </div>
 <div class="top-bar">
-  <%= image_tag "opinion-icon.png" %>
+  <%= image_tag "icon.jpg" %>
   <div>
-    <span class="material-icons">create</span>
+    <%= link_to edit_user_path(current_user.id) do%>
+      <span class="material-icons">create</span>
+    <% end %>
     <span class="material-icons">local_post_office</span>
     <span class="material-icons">search</span>
     <span class="material-icons">settings</span>
+    <a><%= link_to "Logout", logout_path, method: 'DELETE' %></a>
   </div>
 </div>

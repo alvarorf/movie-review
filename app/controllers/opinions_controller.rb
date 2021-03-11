@@ -13,10 +13,13 @@ class OpinionsController < ApplicationController
 
   def create
     @opinion = Opinion.new(opinion_params)
+    @opinion.author_id = current_user.id
     if @opinion.save
+      current_user.opinion_count += 1
+      current_user.save
       redirect_to home_path
     else
-      render 'new'
+      render 'show'
     end
   end
 
