@@ -2,10 +2,10 @@ class CreateOpinions < ActiveRecord::Migration[6.1]
   def change
     create_table :opinions do |t|
       t.text :text
-      t.references :user, null: false, foreigh_key: true
+      t.integer :author_id
 
       t.timestamps
     end
-    add_index :opinions, [:user_id, :created_at]
+
   end
 end

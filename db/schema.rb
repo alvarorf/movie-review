@@ -24,11 +24,9 @@ ActiveRecord::Schema.define(version: 2021_02_20_054240) do
 
   create_table "opinions", force: :cascade do |t|
     t.text "text"
-    t.bigint "user_id", null: false
+    t.integer "author_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id", "created_at"], name: "index_opinions_on_user_id_and_created_at"
-    t.index ["user_id"], name: "index_opinions_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -36,10 +34,11 @@ ActiveRecord::Schema.define(version: 2021_02_20_054240) do
     t.string "photo"
     t.string "coverimage"
     t.string "fullname"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
     t.integer "count_follower", default: 0
     t.integer "count_followed", default: 0
+    t.integer "opinion_count", default: 0
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end

@@ -5,8 +5,6 @@ class OpinionsController < ApplicationController
     @opinion = Opinion.new
   end
 
-  def new; end
-
   def show
     @opinion = Opinion.find(params[:id])
   end
@@ -22,10 +20,6 @@ class OpinionsController < ApplicationController
       render 'show'
     end
   end
-
-  def update; end
-
-  def destroy; end
 
   def require_login
     redirect_to login_path unless current_user
