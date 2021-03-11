@@ -10,8 +10,5 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.integer :opinion_count, :default => 0
       t.timestamps
     end
-    # add_column :users, :count_follower, :integer, :default => 0
-    # add_column :users, :count_followed, :integer, :default => 0
-    # add_column :users, :opinion_count, :integer
   end
 end
