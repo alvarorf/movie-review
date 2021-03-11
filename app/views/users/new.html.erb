@@ -22,10 +22,6 @@
           <%= user.text_field :fullname, placeholder:"Full name", class:"username-field",  id:"fullname"%>
         </div>
         <div>
-          <span class="material-icons">create</span>
-          <%= user.text_field :email, placeholder:"Email", class:"email-field",  id:"fullname"%>
-        </div>
-        <div>
           <h5>Add profile photo: </h5>
           <%= user.file_field :photo, id:"photo" %>
         </div>
@@ -34,7 +30,7 @@
           <%= user.file_field :coverimage, id:"coverimage" %>
         </div>
         <div>
-          <span>Already have an account? <%= link_to "Login", new_user_session_url %></span>
+          <span>Already have an account? <%= link_to "Login", login_path %></span>
           <%= user.submit "Sign up", class:'btn', id:"signup"%>
         </div>
       </div>

@@ -1,7 +1,5 @@
 <div class="edit">
-  <% if signed_in? %>
   <img class="image" src="<%= current_user.photo %>">
-  <% end %>
   <%= form_for @user do |user| %>
     <div class="edit-path">
       <%= flash[:success] %>

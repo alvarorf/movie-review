@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
   <%= render 'layouts/header' %>
-  <link rel="stylesheet" >
   <body>
-    <% if signed_in? %>
+    <% if logged_in? %>
       <%= render 'layouts/sidebar' %>
     <% end %>
     <%= yield %>

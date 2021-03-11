@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, only: %i[show follow_user edit update]
+  before_action :require_login, only: %i[show follow_user edit update]
   before_action :require_logout, only: %i[new create]
   def index
     @users = User.all
@@ -17,8 +17,8 @@ class UsersController < ApplicationController
     #s3_service = Aws::S3::Resource.new
     @user = User.new(user_params)
     # attach_files(s3_service) if params[:user][:photo] && params[:user][:coverimage]
-    @user.username = user_param[:username]
-    @user.fullname = user_param[:fullname]
+    @user.username = user_params[:username]
+    @user.fullname = user_params[:fullname]
 
     if @user.save
       flash[:success] = 'Profile updated!'
@@ -57,7 +57,11 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:photo,:coverimage,:username, :fullname, :email, :password, :password_confirmation)
+    params.require(:user).permit(:username, :fullname)
+  end
+
+  def require_login
+    redirect_to login_path unless current_user
   end
 
   def require_logout

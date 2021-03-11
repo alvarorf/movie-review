@@ -1,14 +1,14 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+  #devise :database_authenticatable, :registerable,
+  #       :recoverable, :rememberable, :validatable
   validates :username, presence: true, length: { maximum: 50 }, uniqueness: true
   validates :fullname, presence: true, length: { maximum: 100 }
   #validates :photo , presence: true
   #validates :coverimage , presence: true
   before_save { username.downcase! }
-  has_many :opinions, foreign_key: 'author_id', class_name: 'Opinion'
+  has_many :created_opinions, foreign_key: 'author_id', class_name: 'Opinion'
   has_many :followers, foreign_key: :followed_id, class_name: 'Following'
   has_many :user_followers, through: :followers, source: :follower
 
@@ -25,6 +25,7 @@ class User < ApplicationRecord
   end
 
   def not_followed
+    #return unless count_followed > 0
     User.all.where.not(id: user_followeds.select(:id)).where.not(id: id).order(created_at: :desc)
   end
 

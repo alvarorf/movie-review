@@ -1,8 +1,8 @@
 class OpinionsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :require_login, only: %i[create show index]
   def index
-    @opinions = current_user.opinions.all
-    @opinion = Opininion.new
+    @opinions = current_user.created_opinions.all
+    @opinion = Opinion.new
   end
 
   def new; end
@@ -23,6 +23,10 @@ class OpinionsController < ApplicationController
   def update; end
 
   def destroy; end
+
+  def require_login
+    redirect_to login_path unless current_user
+  end
 
   private
 
