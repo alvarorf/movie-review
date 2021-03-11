@@ -1,11 +1,22 @@
 require 'rails_helper'
 
 RSpec.describe Opinion, type: :model do
-  it 'Should fail if we try to create an empty opinion' do
-    expect(Opinion.new).to_not be_valid
-  end
-  it 'Should be valid' do
-    u = User.create(username: 'user1', fullname: 'User 1')
-    expect(Opinion.new(author_id: u.id, text: 'First opinion, by User 1')).to be_valid
+  let(:user1) { User.create(username: 'user1', fullname:'name1',
+  photo: 'link', coverimage: 'link') }
+
+  let(:opinion1) { Opinion.create(author_id: user1.id, text:'opinion1') }
+
+  describe 'validates user attributes' do
+    it 'validates if the opinion is valid' do
+      expect(opinion1.valid?).to eql(true)
+    end
+    it 'validates if the text is present' do
+      opinion1.text = ' '
+      expect(opinion1.valid?).not_to eql(true)
+    end
+    it 'validates if the name is not too long' do
+      opinion1.text = 'a' * 501
+      expect(opinion1.valid?).not_to eql(true)
+    end
   end
 end
