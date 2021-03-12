@@ -1,8 +1,8 @@
 class User < ApplicationRecord
   validates :username, presence: true, length: { maximum: 50 }, uniqueness: true
   validates :fullname, presence: true, length: { maximum: 100 }
-  #validates :photo , presence: true
-  #validates :coverimage , presence: true
+  # validates :photo , presence: true
+  # validates :coverimage , presence: true
   before_save { username.downcase! }
   has_many :created_opinions, foreign_key: 'author_id', class_name: 'Opinion'
   has_many :followers, foreign_key: :followed_id, class_name: 'Following'
@@ -17,11 +17,11 @@ class User < ApplicationRecord
     @user.count_followed += 1
     self.count_follower += 1
     @user.save
-    self.save
+    save
   end
 
   def not_followed
-    #return unless count_followed > 0
+    # return unless count_followed > 0
     User.all.where.not(id: user_followeds.select(:id)).where.not(id: id).order(created_at: :desc)
   end
 
