@@ -25,15 +25,15 @@
 - The user is presented with the homepage
 - The Left-side menu includes only links to Home and profile
 - In the Homepage:
-  - *Tweets* tab are in the center(sorted by most recent) with a simple form for creating a tweet, to publish must use the "enter"
-  - All the tweets are sorted by most recent that display the tweet text and author details
+  - *Opinions* tab are in the center(sorted by most recent) with a simple form for creating an opinion, to publish must use the "enter"
+  - All the opinions are sorted by most recent that display the opinion text and author details
   - Right-side section shows who to follow, users not followed by the logged user(sorted by most recent)
 - In the profile page
-  - In the the center there's only Cover picture and *Tweets* tab
+  - In the the center there's only Cover picture and *Opinions* tab
   - Right-side section shows:
       - User photo.
       - Button to follow a user.
-      - Stats: total number of tweets, number of followers and number of following users.
+      - Stats: total number of opinions, number of followers and number of following users.
       - List of people who follow this user
 
 ## Built With
