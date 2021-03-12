@@ -14,9 +14,31 @@ feature 'User login the app' do
 
     visit home_path
 
-    fill_in 'text', with: 'tweet'
+    fill_in 'text', with: 'opinion'
     click_button 'submit'
 
     expect(page).to have_text user.username
+  end
+
+  scenario 'following users are shown in the home page' do
+    visit login_path
+
+    fill_in 'username', with: user.username
+    click_button 'login'
+
+    visit home_path
+
+    expect(page).to have_text user.followeds.all.count
+  end
+
+  scenario 'followers are shown in the home page' do
+    visit login_path
+
+    fill_in 'username', with: user.username
+    click_button 'login'
+
+    visit home_path
+
+    expect(page).to have_text user.followers.all.count
   end
 end

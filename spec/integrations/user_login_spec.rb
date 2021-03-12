@@ -15,10 +15,19 @@ feature 'User login the app' do
     expect(page).to have_text user.username
   end
 
-  scenario 'user cant login without valid information' do
+  scenario "user can't login without valid information" do
     visit login_path
 
     fill_in 'username', with: 'username'
+    click_button 'login'
+
+    expect(page).to have_text 'Please verify your submission'
+  end
+
+  scenario "user can't login with no data" do
+    visit login_path
+
+    fill_in 'username', with: ''
     click_button 'login'
 
     expect(page).to have_text 'Please verify your submission'
