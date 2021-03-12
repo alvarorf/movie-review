@@ -1,9 +1,22 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
-# Movie review app
+## Movie Review app
 
-> Welcome to my Movie Review web application. This project was built with `Ruby on Rails` and `PostgreSQL` in the back-end and `Sass` in the front-end. `Rspec` and `Capybara` were used in the testing phase and `Heroku` was used for deployment.
+> Welcome to my Movie Review web application. This project was built with `Ruby on Rails` and `PostgreSQL` in the back-end and `Sass` in the front-end. `Rspec` was used in the testing phase and `Heroku` was used for deployment.
 
-![screenshot](./app/assets/images/screenshot.png)
+# Home page
+![Home page](./app/assets/images/home_page.png)
+
+# Sign up page
+![Sign up page](./app/assets/images/signup_page.png)
+
+# Sign in page
+![Sign in page](./app/assets/images/login_page.png)
+
+# User profile page
+![User profile page](./app/assets/images/user_profile_page.png)
+
+# Edit profile page
+![User profile page](./app/assets/images/edit_profile_page.png)
 
 ## Built With
 
@@ -11,7 +24,6 @@
 - Ruby on Rails v6.1.3
 - Rspec
 - Linux
-- Capybara
 - Sass
 - PostgreSQL
 
@@ -27,7 +39,7 @@ To get a local copy up and running follow these simple example steps.
 ### Prerequisites
 
 Ruby: 2.7.2
-Rails: >=5.2.3
+Rails: >=6.1.3
 Postgres: >=9.5
 
 ### Setup

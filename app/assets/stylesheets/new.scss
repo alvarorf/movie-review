@@ -2,10 +2,10 @@
 @import "bootstrap";
 
 $font-color: #62778a;
-$divisor-color: #172531;
-$top-background: #1b2a3d;
-$main-background: #213246;
-$selector-blue: linear-gradient(to bottom right, #56abee, #4e9fdc);
+$divisor-color: #212f3b;
+$top-background: #263a57;
+$main-background: #263f5d;
+$selector-blue: linear-gradient(to bottom right, #89fad8, #4e7bdc);
 $top-bar-font: #376e9a;
 $new-opinions:#78b5e5;
 $border-following: #bebfc1;
@@ -52,7 +52,7 @@ body{
     width: 50%;
   }
   .image{
-    background-image: url("");
+    background: url("https://res.cloudinary.com/diteastga/image/upload/v1615521694/image_gc9vgy.jpg");
     background-size: cover;
     width: 50%;
   }
