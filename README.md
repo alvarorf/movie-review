@@ -1,4 +1,5 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
+
 ## Movie Review app
 
 > Welcome to my Movie Review web application. This project was built with `Ruby on Rails` and `PostgreSQL` in the back-end and `Sass` in the front-end. `Rspec` was used in the testing phase and `Heroku` was used for deployment.
@@ -18,6 +19,23 @@
 # Edit profile page
 ![User profile page](./app/assets/images/edit_profile_page.png)
 
+## Features
+
+- The user logs in to the app, only by typing the username
+- The user is presented with the homepage
+- The Left-side menu includes only links to Home and profile
+- In the Homepage:
+  - *Tweets* tab are in the center(sorted by most recent) with a simple form for creating a tweet, to publish must use the "enter"
+  - All the tweets are sorted by most recent that display the tweet text and author details
+  - Right-side section shows who to follow, users not followed by the logged user(sorted by most recent)
+- In the profile page
+  - In the the center there's only Cover picture and *Tweets* tab
+  - Right-side section shows:
+      - User photo.
+      - Button to follow a user.
+      - Stats: total number of tweets, number of followers and number of following users.
+      - List of people who follow this user
+
 ## Built With
 
 - Ruby v2.7.2
@@ -29,7 +47,7 @@
 
 ## Live Demo
 
-![Demo](https://movie-review-rails-capstone.herokuapp.com)
+[Demo](https://movie-review-rails-capstone.herokuapp.com)
 
 
 ## Getting Started

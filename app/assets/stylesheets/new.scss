@@ -47,6 +47,133 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+.login .path a {
+  font-weight: bold;
+}
+
+.sidebar .follows h4 {
+  margin-bottom: 0;
+  color: white;
+  font-weight: bold;
+  font-size: $font-size;
+}
+
+.sidebar .profile-links a {
+  color: $font-color;
+  text-decoration: none;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.user-section {
+  display: flex;
+
+  .user-details {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    color: $font-color;
+  }
+}
+
+.user-section .rightbar-user {
+  width: 310px;
+  border-left: 1px solid $border-following;
+
+  .followed_by {
+    padding: 20px;
+
+    .follower-det {
+      display: flex;
+      padding-top: 20px;
+
+      .follower-name {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+
+  .user-det {
+    padding: 20px;
+
+    .photo-adduser {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+
+    .username-name {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .profile-photo {
+      width: 90px;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 50px;
+      background-color: $new-opinions;
+    }
+  }
+}
+
+.home-user {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+
+  .cover-img {
+    width: 100%;
+    height: 200px;
+    background-color: $new-opinions;
+    object-fit: cover;
+  }
+}
+
+.user-section .middle-section {
+  margin: 0 0 0 $width;
+  padding: 0;
+
+  .cover-img {
+    width: 100%;
+    height: 200px;
+    background-color: $new-opinions;
+    object-fit: cover;
+  }
+
+  .new-opinions {
+    @include opinions;
+
+    margin: 30px;
+    flex-direction: column;
+    color: $new-opinions;
+  }
+}
+
+div > * {
+  margin: 0;
+}
+
+.top-bar div {
+  justify-content: center;
+  display: flex;
+  font-weight: bold;
+}
+
+.user-section .user-details a {
+  font-weight: bold;
+  color: $font-color;
+}
+
+.top-bar div a:hover {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
 .login {
   background-color: $signin-background;
   color: $border-following;
@@ -86,205 +213,376 @@ body {
       background-image: none;
       padding-bottom: 10px;
     }
-
-    div:last-child {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-
-      a {
-        font-weight: bold;
-      }
-
-      span {
-        font-size: 15px;
-        color: $font-color;
-        background-image: none;
-        padding-bottom: 16px;
-      }
-    }
-
-    div:first-child {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .btn {
-      justify-self: flex-end;
-      background-image: $selector-blue !important;
-      border-radius: 0;
-      border: none;
-      font-size: 25px;
-      color: white;
-      width: 80%;
-    }
-
-    div {
-      display: flex;
-      flex-direction: row;
-      color: $top-bar-font;
-      width: 80%;
-
-      span {
-        background-image: $selector-blue;
-        color: white;
-        font-size: 45px;
-      }
-
-      .username-field {
-        border-radius: 0;
-        border: none;
-        width: calc(100% - 45px);
-        padding-left: 10px;
-      }
-    }
   }
 
-  div > * {
-    margin: 0;
+  .btn {
+    justify-self: flex-end;
+    background-image: $selector-blue !important;
+    border-radius: 0;
+    border: none;
+    font-size: 25px;
+    color: white;
+    width: 80%;
   }
 }
 
-.home-user {
+.login div {
   display: flex;
   flex-direction: row;
-  height: 100%;
+  color: $top-bar-font;
+  width: 80%;
+}
 
-  .rightbar-home {
-    @include text;
+.login div:last-child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
 
-    font-size: $font-size;
-    width: 310px;
-    padding: 30px;
-    color: $font-color;
-    border-left: 1px solid $border-following;
-    border-bottom: 1px solid $border-following;
+.login div span {
+  background-image: $selector-blue;
+  color: white;
+  font-size: 45px;
+}
 
-    .user-section {
-      display: flex;
+.login .path span {
+  font-size: 15px;
+  color: $font-color;
+  background-image: none;
+  padding-bottom: 16px;
+}
 
-      a {
-        cursor: pointer;
-      }
+.top-bar {
+  margin-left: $width;
+  background-image: $selector-blue;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 30px;
+  align-items: center;
+  color: $top-bar-font;
 
-      .middle-section {
-        margin: 0 0 0 $width;
+  div > * {
+    margin-left: 20px;
+  }
 
-        .cover-img {
-          width: 100%;
-          height: 200px;
-          background-color: $new-opinions;
-          object-fit: cover;
-        }
-      }
+  img {
+    width: 40px;
+  }
+}
 
-      .rightbar-user {
-        width: 310px;
-        border-left: 1px solid $border-following;
+.edit {
+  margin: 30px 30px 0 300px;
+  border: 1px solid $border-following;
+  padding: 20px;
+  background-color: white;
+  display: flex;
+
+  form {
+    flex-grow: 1;
+    width: 100%;
+  }
+
+  .edit-path {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .form-group {
+      input {
+        width: 100%;
       }
     }
+  }
+
+  .btn {
+    border: none;
+    background-image: $selector-blue;
+    color: white;
+  }
+}
+
+.edit img {
+  width: 100%;
+  margin-right: 20px;
+  flex-grow: 1;
+  max-width: 50%;
+}
+
+.home-user .rightbar-home {
+  @include text;
+
+  font-size: $font-size;
+  width: 310px;
+  padding: 30px;
+  color: $font-color;
+  border-left: 1px solid $border-following;
+  border-bottom: 1px solid $border-following;
+
+  .user-section {
+    display: flex;
+
+    .rightbar-user {
+      width: 310px;
+      border-left: 1px solid $border-following;
+    }
+  }
+
+  img {
+    width: 60px;
+    height: 60px;
+    border-radius: 40px;
+    background-color: $new-opinions;
+    object-fit: cover;
+  }
+
+  div {
+    margin-top: 20px;
+  }
+}
+
+.home-user .rightbar-home .user-section a {
+  cursor: pointer;
+}
+
+.home-user .rightbar-home span {
+  margin-left: 20px;
+}
+
+.home-user .rightbar-home h4 {
+  padding-bottom: 20px;
+  border-bottom: 1px solid $border-following;
+  font-size: $font-size;
+}
+
+.home-user .middle-section {
+  color: $font-color;
+  margin: $margin-middle;
+  padding: 0;
+
+  h4 {
+    font-size: 15px;
+  }
+
+  .opinion-section {
+    height: 150px;
+
+    @include opinions;
+
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 30px;
 
     h4 {
-      padding-bottom: 20px;
-      border-bottom: 1px solid $border-following;
-      font-size: $font-size;
+      margin: 0;
+    }
+  }
+
+  .opinion {
+    border: $border-following 1px solid;
+    height: 80px;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+  }
+}
+
+.home-user .rightbar-home .user-section .middle-section {
+  margin: 0 0 0 $width;
+}
+
+.user-section .middle-section .new-opinions h4 {
+  border-bottom: 1px solid $border-following;
+  font-weight: bold;
+  padding-bottom: 20px;
+  margin: 0;
+}
+
+.user-section .user-details a:hover {
+  cursor: pointer;
+}
+
+.sidebar .profile-links a:hover {
+  color: white;
+}
+
+.user-section .rightbar-user .user-det .photo-adduser a {
+  font-size: 40px;
+}
+
+.home-user .middle-section .new-opinions {
+  @include opinions;
+
+  margin: 30px;
+  flex-direction: column;
+  height: 100%;
+  color: $new-opinions;
+
+  h4 {
+    border-bottom: 1px solid $border-following;
+    font-weight: bold;
+    padding-bottom: 20px;
+    margin: 0;
+  }
+
+  .user-opinions {
+    display: flex;
+    margin-top: 20px;
+
+    .user-details {
+      display: flex;
+      flex-direction: column;
+      color: $font-color;
+
+      h5 {
+        margin-top: 0;
+        font-weight: bold;
+      }
+
+      a {
+        color: $font-color;
+      }
     }
 
     img {
       width: 60px;
       height: 60px;
       border-radius: 40px;
+      margin-right: 20px;
       background-color: $new-opinions;
       object-fit: cover;
     }
+  }
+}
 
-    div {
-      margin-top: 20px;
-    }
+.user-section .rightbar-user .followed_by .follower-det .follower-name a {
+  color: $font-color;
+}
 
-    span {
-      margin-left: 20px;
-    }
+.user-section .rightbar-user .followed_by .follower-det .follower-name a:hover {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.user-section .rightbar-user .followed_by .follower-det .follower-name a:first-child {
+  color: $font-color;
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+
+.user-section .rightbar-user .opinions-follows {
+  display: flex;
+  justify-content: space-evenly;
+  border-top: 1px solid $border-following;
+  border-bottom: 1px solid $border-following;
+  flex-flow: wrap;
+
+  .line {
+    width: 1px;
+    background-color: $border-following;
   }
 
-  .middle-section {
-    color: $font-color;
-    margin: $margin-middle;
-    padding: 0;
-
-    h4 {
-      font-size: 15px;
-    }
-
-    .opinion-section {
-      height: 150px;
-
-      @include opinions;
-
-      flex-direction: column;
-      justify-content: space-between;
-      margin: 30px;
-
-      h4 {
-        margin: 0;
-      }
-    }
-
-    .opinion {
-      border: $border-following 1px solid;
-      height: 80px;
-      border-radius: 10px;
-      padding: 10px;
-      width: 100%;
-    }
-
-    .new-opinions {
-      @include opinions;
-
-      margin: 30px;
-      flex-direction: column;
-      height: 100%;
-      color: $new-opinions;
-
-      h4 {
-        border-bottom: 1px solid $border-following;
-        font-weight: bold;
-        padding-bottom: 20px;
-        margin: 0;
-      }
-
-      .user-opinions {
-        display: flex;
-        margin-top: 20px;
-
-        .user-details {
-          display: flex;
-          flex-direction: column;
-          color: $font-color;
-
-          h5 {
-            margin-top: 0;
-            font-weight: bold;
-          }
-
-          a {
-            color: $font-color;
-          }
-        }
-
-        img {
-          width: 60px;
-          height: 60px;
-          border-radius: 40px;
-          margin-right: 20px;
-          background-color: $new-opinions;
-          object-fit: cover;
-        }
-      }
-    }
+  .section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $border-following;
+    width: 33%;
   }
+}
+
+.user-section .rightbar-user .opinions-follows span {
+  margin-bottom: 20px;
+}
+
+.user-section .rightbar-user .followed_by span {
+  padding-bottom: 20px;
+  border-bottom: 1px solid $border-following;
+  width: 100%;
+  display: block;
+}
+
+.user-section .rightbar-user .user-det .username-name span {
+  padding-top: 10px;
+}
+
+.user-section .rightbar-user .user-det .photo-adduser span {
+  color: $border-following;
+  font-size: 40px;
+  justify-content: center;
+  display: flex;
+}
+
+.user-section .rightbar-user .opinions-follows .section span:first-child {
+  margin: 20px 0 0 0;
+  color: $font-color;
+}
+
+.user-section .middle-section .new-opinions .user-det {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+
+  .user-name {
+    display: flex;
+    flex-direction: column;
+    color: $accent-color;
+  }
+}
+
+.user-section .middle-section .new-opinions .user-det .user-name span {
+  font-weight: bold;
+}
+
+.sidebar .profile-links {
+  display: flex;
+  flex-direction: column;
+  font-size: $font-size;
+  font-weight: 500;
+
+  &:hover {
+    background-image: $selector-blue;
+    color: white;
+  }
+
+  div {
+    display: flex;
+    padding: 20px;
+    align-items: center;
+  }
+}
+
+.login div .username-field {
+  border-radius: 0;
+  border: none;
+  width: calc(100% - 45px);
+  padding-left: 10px;
+}
+
+.login div:first-child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-section .rightbar-user .followed_by .follower-det img {
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
+  background-color: $new-opinions;
+  object-fit: cover;
+  border-radius: 30px;
+}
+
+.user-section .middle-section .new-opinions .user-det img {
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
+  background-color: $new-opinions;
+  border: none;
+  object-fit: cover;
 }
 
 .sidebar {
@@ -328,308 +626,10 @@ body {
     flex-direction: column;
     text-align: center;
     padding: 10px 0;
-
-    h4 {
-      margin-bottom: 0;
-      color: white;
-      font-weight: bold;
-      font-size: $font-size;
-    }
   }
 
   .divisor {
     width: 1px;
     background-color: $divisor-color;
-  }
-
-  .profile-links {
-    display: flex;
-    flex-direction: column;
-    font-size: $font-size;
-    font-weight: 500px;
-
-    :hover {
-      background-image: $selector-blue;
-      color: white;
-    }
-
-    a {
-      color: $font-color;
-      text-decoration: none;
-      cursor: pointer;
-      margin-left: 10px;
-
-      :hover {
-        color: white;
-      }
-    }
-
-    div {
-      display: flex;
-      padding: 20px;
-      align-items: center;
-    }
-  }
-}
-
-.top-bar {
-  margin-left: $width;
-  background-image: $selector-blue;
-  height: 80px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 30px;
-  align-items: center;
-  color: $top-bar-font;
-
-  div > * {
-    margin-left: 20px;
-  }
-
-  img {
-    width: 40px;
-  }
-
-  div {
-    justify-content: center;
-    display: flex;
-    font-weight: bold;
-
-    a:hover {
-      text-decoration: none;
-      color: white;
-      cursor: pointer;
-    }
-  }
-}
-
-.user-section {
-  display: flex;
-
-  .user-details {
-    display: flex;
-    flex-direction: column;
-    padding-left: 20px;
-    color: $font-color;
-
-    a:hover {
-      cursor: pointer;
-    }
-
-    a {
-      font-weight: bold;
-      color: $font-color;
-    }
-  }
-
-  .middle-section {
-    margin: 0 0 0 $width;
-    padding: 0;
-
-    .cover-img {
-      width: 100%;
-      height: 200px;
-      background-color: $new-opinions;
-      object-fit: cover;
-    }
-
-    .new-opinions {
-      @include opinions;
-
-      margin: 30px;
-      flex-direction: column;
-      color: $new-opinions;
-
-      h4 {
-        border-bottom: 1px solid $border-following;
-        font-weight: bold;
-        padding-bottom: 20px;
-        margin: 0;
-      }
-
-      .user-det {
-        display: flex;
-        flex-direction: row;
-        margin-top: 20px;
-
-        img {
-          width: 60px;
-          height: 60px;
-          margin-right: 20px;
-          background-color: $new-opinions;
-          border: none;
-          object-fit: cover;
-        }
-
-        .user-name {
-          display: flex;
-          flex-direction: column;
-          color: $accent-color;
-
-          span {
-            font-weight: bold;
-          }
-        }
-      }
-    }
-  }
-
-  .rightbar-user {
-    width: 310px;
-    border-left: 1px solid $border-following;
-
-    .user-det {
-      padding: 20px;
-
-      .photo-adduser {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-
-        a {
-          font-size: 40px;
-        }
-
-        span {
-          color: $border-following;
-          font-size: 40px;
-          justify-content: center;
-          display: flex;
-        }
-      }
-
-      .username-name {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-
-        span {
-          padding-top: 10px;
-        }
-      }
-
-      .profile-photo {
-        width: 90px;
-        height: 90px;
-        object-fit: cover;
-        border-radius: 50px;
-        background-color: $new-opinions;
-      }
-    }
-
-    .followed_by {
-      padding: 20px;
-
-      span {
-        padding-bottom: 20px;
-        border-bottom: 1px solid $border-following;
-        width: 100%;
-        display: block;
-      }
-
-      .follower-det {
-        display: flex;
-        padding-top: 20px;
-
-        img {
-          width: 60px;
-          height: 60px;
-          margin-right: 20px;
-          background-color: $new-opinions;
-          object-fit: cover;
-          border-radius: 30px;
-        }
-
-        .follower-name {
-          display: flex;
-          flex-direction: column;
-
-          a {
-            color: $font-color;
-          }
-
-          a:hover {
-            cursor: pointer;
-            text-decoration: none;
-          }
-
-          a:first-child {
-            color: $font-color;
-            font-weight: bold;
-            padding-bottom: 5px;
-          }
-        }
-      }
-    }
-
-    .opinions-follows {
-      display: flex;
-      justify-content: space-evenly;
-      border-top: 1px solid $border-following;
-      border-bottom: 1px solid $border-following;
-      flex-flow: wrap;
-
-      .line {
-        width: 1px;
-        background-color: $border-following;
-      }
-
-      span {
-        margin-bottom: 20px;
-      }
-
-      .section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        color: $border-following;
-        width: 33%;
-
-        span:first-child {
-          margin: 20px 0 0 0;
-          color: $font-color;
-        }
-      }
-    }
-  }
-}
-
-.edit {
-  margin: 30px 30px 0 300px;
-  border: 1px solid $border-following;
-  padding: 20px;
-  background-color: white;
-  display: flex;
-
-  img {
-    width: 100%;
-    margin-right: 20px;
-    flex-grow: 1;
-    max-width: 50%;
-  }
-
-  form {
-    flex-grow: 1;
-    width: 100%;
-  }
-
-  .edit-path {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-
-    .form-group {
-      input {
-        width: 100%;
-      }
-    }
-  }
-
-  .btn {
-    border: none;
-    background-image: $selector-blue;
-    color: white;
   }
 }
