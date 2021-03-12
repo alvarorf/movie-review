@@ -44,7 +44,13 @@ class UsersController < ApplicationController
   end
 
   def update
+    s3_service = Aws::S3::Resource.new(
+      region: 'us-east-1',
+      access_key_id: ENV['ACCESS_KEY'],
+      secret_access_key: ENV['SECRET_ACCESS_KEY']
+    )
     @user = User.find(current_user.id)
+    attach_files(s3_service) if params[:user][:photo] && params[:user][:coverimage]
     @user.username = user_params[:username]
     @user.fullname = user_params[:fullname]
     if @user.update(user_params)
