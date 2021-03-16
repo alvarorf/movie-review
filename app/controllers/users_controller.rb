@@ -14,7 +14,6 @@ class UsersController < ApplicationController
   end
 
   def create
-    # s3_service = Aws::S3::Resource.new
     s3_service = Aws::S3::Resource.new(
       region: 'us-east-1',
       access_key_id: ENV['ACCESS_KEY'],
